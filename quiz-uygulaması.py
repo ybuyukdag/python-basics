@@ -56,9 +56,9 @@ class Quiz:
         else:
             print(f'Question {questionsNumber} of {totalQuestion}'.center(100,'*'))
 
-q1 = Question("En iyi programlama dili hangisidir?", ["C#","Python","Javascript","Java"], "Python")
-q2 = Question("En popüler programlama dili hangisidir?", ["C#","Python","Javascript","Java"], "Python")
-q3 = Question("En çok kazandıran programlama dili hangisidir?", ["C#","Python","Javascript","Java"], "Python")
+q1 = Question("Türkiye'nin başkenti neresidir?", ["Ankara","İzmir","İstanbul","Edirne"], "Ankara")
+q2 = Question("Türkiye'nin en az nüfuslu ili hangisidir?", ["Burdur","Bartın","Kilis","Tunceli"], "Tunceli")
+q3 = Question("Türkiye'nin en büyük dağı hangisidir?", ["Süphan","Erciyes","Ağrı","Uludağ"], "Ağrı")
 
 questions = [q1, q2 , q3]
 
