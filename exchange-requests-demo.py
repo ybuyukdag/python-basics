@@ -1,14 +1,19 @@
 import requests
 import json
+from datetime import datetime
 
-api_url = "https://api.exchangeratesapi.io/v1/latest? access_key =IbGVnF2k5bdxZZkoTM7ljZZ11Nuarwym"
 
-bozulan_doviz = input("bozulan döviz türü: ")
-alinan_doviz = input("alınan döviz türü: ")
-miktar = int(input(f"Ne kadar {bozulan_doviz} bozdurmak istiyorsunuz: "))
+api_url ="https://openexchangerates.org/api/latest.json?app_id=50f11acd9a29453f8888f7c2cb59e2de"
 
-result = requests.get(api_url+bozulan_doviz)
+from_currency = input("from currency: ")
+to_currency   = input("To currency: ")
+amount        = int(input("Amount: "))  
+    
+result = requests.get(api_url)
 result = json.loads(result.text)
 
-print("1 {0} = {1} {2}".format(bozulan_doviz, result["rates"][alinan_doviz], alinan_doviz))
-print("{0} {1} = {2} {3}".format(miktar, bozulan_doviz, miktar * result["rates"][alinan_doviz],alinan_doviz))
+dt = datetime.fromtimestamp(1678701606)
+
+print("1",from_currency,result["rates"][to_currency],to_currency,dt)
+print("Agg=",amount * result["rates"][to_currency],to_currency)
+ 
